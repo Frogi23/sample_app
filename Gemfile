@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
-gem 'pg', '0.12.2'
+gem 'pg'
 
 group :development, :test do
   gem 'rspec-rails', '2.11.0'
