@@ -6,8 +6,8 @@
 
 development:
   adapter: postgresql
-  host: db/
-  username:
+  host: 127.0.0.1
+  username: 
   database: 
 
 # Warning: The database defined as "test" will be erased and
