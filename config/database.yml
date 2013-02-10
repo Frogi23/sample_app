@@ -3,6 +3,8 @@
 #
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
+
+- psql -c "CREATE USER skateparks;" -U postgres
 development:
   adapter: postgresql
   host: localhost
