@@ -44,28 +44,17 @@ describe "Static pages" do
     end
   end
 
-<<<<<<< HEAD
-  describe "About page" do
-  
-	it "should have the h1 'Contact'" do
-      visit '/static_pages/contact'
+describe "Contact" do
+
+    it "should have the h1 'Contact'" do
+      visit '/static_pages/about'
       page.should have_selector('h1', :text => 'About Us')
-=======
-  describe "Contact" do
-  
-	it "should have the h1 'Contact'" do
-      visit '/static_pages/contact'
-      page.should have_selector('h1', :text => 'Contact')
->>>>>>> static-pages
     end
 
-  	it "should have the title 'Contact'" do
-      visit '/static_pages/contact'
+    it "should have the title 'Contact'" do
+      visit '/static_pages/about'
       page.should have_selector('title',
-                    :text => "Ruby on Rails Tutorial Sample App | Contact")
-  	end  
-<<<<<<< HEAD
-=======
+                    :text => "Ruby on Rails Tutorial Sample App | About Us")
+    end
   end
->>>>>>> static-pages
 end
