@@ -15,10 +15,15 @@ describe "User pages" do
     describe "signup page" do
         before { visit signup_path }
 
-        let(:submit) { "Create my account" }
-
     	it { should have_selector 'h1',         text: 'Sign up' }
     	it { should have_selector 'title',      text: 'Sign up' }
+    end
+
+    describe "signup" do
+
+        before { visit signup_path }
+
+        let(:submit) { "Create my account" }
 
         describe "signup with invalid information" do
             it "should not create a user" do
@@ -54,4 +59,14 @@ describe "User pages" do
             end
         end
     end
+
+    describe "edit" do
+        let(:user) { FactoryGirl.create(:user) }
+
+        describe "page" do
+        
+        end
+
+    end
+
 end
