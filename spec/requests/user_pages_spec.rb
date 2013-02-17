@@ -29,25 +29,26 @@ describe "User pages" do
                 end 
             end
         end
-    end
+    
 
-    describe "delete links" do
+        # describe "delete links" do
 
-      it { should_not have_link('delete') }
+        #   it { should_not have_link('delete') }
 
-      describe "as an admin user" do
-        let(:admin) { FactoryGirl.create(:admin) }
-        before do
-          sign_in admin
-          visit users_path
-        end
+        #   describe "as an admin user" do
+        #     let(:admin) { FactoryGirl.create(:admin) }
+        #     before do
+        #       sign_in admin
+        #       visit users_path
+        #     end
 
-        it { should have_link('delete', href: user_path(User.first)) }
-        it "should be able to delete another user" do
-          expect { click_link('delete') }.to change(User, :count).by(-1)
-        end
-        it { should_not have_link('delete', href: user_path(admin)) }
-      end
+        #     it { should have_link('delete', href: user_path(User.first) }
+        #     it "should be able to delete another user" do
+        #       expect { click_link('delete') }.to change(User, :count).by(-1)
+        #     end
+        #     it { should_not have_link('delete', href: user_path(admin)) }
+        #   end
+        # end
     end
     	
     describe "visit sign in page" do
@@ -98,7 +99,7 @@ describe "User pages" do
                 fill_in "Name",         with: "Example User"
                 fill_in "Email",        with: "user@example.com"
                 fill_in "Password",     with: "foobar"
-                fill_in "Confirmation", with: "foobar"
+                fill_in "Confirm Password", with: "foobar"
              end
 
             it "should create a user" do
