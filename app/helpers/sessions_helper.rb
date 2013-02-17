@@ -13,9 +13,16 @@ module SessionsHelper
 		@current_user ||= User.find_by_remember_token(cookies[:remember_token])
 	end
 
-  	def current_user?(user)
+  def signed_in_user
+      unless signed_in?
+        store_location
+        redirect_to signin_url, notice: "please sign in" unless signed_in?
+      end
+  end
+
+  def current_user?(user)
 		user == current_user
-  	end
+  end
 
 	def signed_in?
     	!current_user.nil?
@@ -34,4 +41,8 @@ module SessionsHelper
   	def store_location
   		session[:return_to] = request.url
   	end
+
+    def signed_out_user
+        redirect_to user_path(current_user), notice: "Already logged in" if signed_in?
+    end
 end

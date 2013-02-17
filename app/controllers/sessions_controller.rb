@@ -20,9 +20,3 @@ class SessionsController < ApplicationController
     redirect_to root_url
   end
 end
-
-private
-
-  def signed_out_user
-        redirect_to user_path(current_user), notice: "already logged in" if signed_in?
-  end
