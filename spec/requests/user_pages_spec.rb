@@ -71,6 +71,14 @@ describe "User pages" do
                         it { should have_content(m1.content) }
                         it { should have_content(m2.content) }
                         it { should have_content(user.microposts.count) }
+                        it { should have_content("Microposts") }
+
+                        describe "checking for one micropost" do
+                            before { click_link "delete" }
+
+                            it { should_not have_content("Microposts") }
+                            it { should have_content("Micropost") }
+                        end
                     end
                 end
             end
